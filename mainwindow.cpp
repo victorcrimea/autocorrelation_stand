@@ -11,6 +11,7 @@ ui(new Ui::MainWindow)
 	signalPlotInit();
 	noisePlotInit();
 	acfPlotInit();
+	ui->statusBar->showMessage("Source code available at https://github.com/victorcrimea/autocorrelation_stand");
 }
 
 MainWindow::~MainWindow()

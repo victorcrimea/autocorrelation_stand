@@ -20,6 +20,58 @@
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <layout class="QGridLayout" name="gridLayout_3">
+      <item row="2" column="0">
+       <widget class="QGroupBox" name="groupBox_3">
+        <property name="title">
+         <string>Summary</string>
+        </property>
+        <widget class="QPushButton" name="runButton">
+         <property name="geometry">
+          <rect>
+           <x>250</x>
+           <y>110</y>
+           <width>92</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Run</string>
+         </property>
+        </widget>
+        <widget class="QWidget" name="formLayoutWidget_3">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>351</width>
+           <height>80</height>
+          </rect>
+         </property>
+         <layout class="QFormLayout" name="formLayout_3">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Number of points</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QSpinBox" name="numberOfPoints">
+            <property name="minimum">
+             <number>64</number>
+            </property>
+            <property name="maximum">
+             <number>10240</number>
+            </property>
+            <property name="value">
+             <number>1024</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
       <item row="0" column="0">
        <widget class="QGroupBox" name="groupBox">
         <property name="title">
@@ -84,6 +136,9 @@
         </widget>
        </widget>
       </item>
+      <item row="1" column="1">
+       <widget class="QCustomPlot" name="noisePlot" native="true"/>
+      </item>
       <item row="0" column="1">
        <widget class="QCustomPlot" name="signalPlot" native="true"/>
       </item>
@@ -116,63 +171,8 @@
         </widget>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QCustomPlot" name="noisePlot" native="true"/>
-      </item>
       <item row="2" column="1">
        <widget class="QCustomPlot" name="acfPlot" native="true"/>
-      </item>
-      <item row="2" column="0">
-       <widget class="QGroupBox" name="groupBox_3">
-        <property name="title">
-         <string>Summary</string>
-        </property>
-        <widget class="QPushButton" name="runButton">
-         <property name="geometry">
-          <rect>
-           <x>250</x>
-           <y>110</y>
-           <width>92</width>
-           <height>27</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Run</string>
-         </property>
-        </widget>
-        <widget class="QWidget" name="formLayoutWidget_3">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>20</y>
-           <width>351</width>
-           <height>80</height>
-          </rect>
-         </property>
-         <layout class="QFormLayout" name="formLayout_3">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_4">
-            <property name="text">
-             <string>Number of points</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QSpinBox" name="numberOfPoints">
-            <property name="minimum">
-             <number>64</number>
-            </property>
-            <property name="maximum">
-             <number>10240</number>
-            </property>
-            <property name="value">
-             <number>1024</number>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </widget>
       </item>
      </layout>
     </item>
@@ -193,14 +193,7 @@
     </property>
     <addaction name="exit"/>
    </widget>
-   <widget class="QMenu" name="menu_2">
-    <property name="title">
-     <string>Справка</string>
-    </property>
-    <addaction name="action_2"/>
-   </widget>
    <addaction name="menu"/>
-   <addaction name="menu_2"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
