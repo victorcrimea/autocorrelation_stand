@@ -5,23 +5,35 @@ Autocorrelation::Autocorrelation(QVector<double> signal)
 	this->signal = signal;
 }
 
-QVector<double> Autocorrelation::getAutocorrelation(int frame)
+QVector<double> Autocorrelation::getAutocorrelation()
 {
-	//Generation of shifted signal
-	QVector<double> shifted = signal;
+	//Mean value of all entries in signal
+	double sum=0;
+	for(int i=0; i < signal.length(); i++){
+		sum+=signal[i];
+	}
+	double mean = sum/signal.length();
 
-	for(int i=0; i<signal.length()-1; i++){
-		if((i+frame) < (signal.length()-1)){
-			shifted[i] = signal[i+frame];
-		}
-
-		cout << shifted[i] << endl;
+	//Sum of quadratic diffs calculation
+	double sum_diffs=0;
+	for(int i=0; i < signal.length(); i++){
+		sum_diffs+= (signal[i] -mean ) * (signal[i] -mean );
 	}
 
 
-	//Convolution of original and shifted signals
-	QVector<double> out(1);
+	QVector<double> out(signal.length());
+	for(int k=0; k<signal.length(); k++){
 
-
+		//Cross Mean-square value
+		double cross_sum = 0;
+		for(int i=0; i < signal.length()-k; i++){
+			cross_sum+= (signal[i] -mean ) * (signal[i+k] -mean );
+			//cout << "cross_sum[" << i << "]" << cross_sum << endl;
+		}
+		//Correlation coeficient calculation
+		double corr_coeff = cross_sum/sum_diffs;
+		out[k]=corr_coeff;
+		cout << "corr_coeff[" << k << "]" << out[k] << endl;
+	}
 	return out;
 }

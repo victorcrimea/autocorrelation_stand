@@ -2,12 +2,14 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QVector>
 #include <cmath>
+#include <cstdlib>
+#include <cfloat>
+#include "qcustomplot.h"
 
 #include "autocorrelation.h"
-#define PI 3.14159265
-
-#define sind(x) sin(x*PI/180)
+#include "utils.h"
 
 namespace Ui {
 class MainWindow;
@@ -28,6 +30,17 @@ private slots:
 
 private:
 	Ui::MainWindow *ui;
+	QCustomPlot *signalPlot;
+	QCustomPlot *noisePlot;
+	QCustomPlot *acfPlot;
+
+	void signalPlotInit();
+	void noisePlotInit();
+	void acfPlotInit();
+
+	void signalPlotDraw(QVector<double> data);
+	void noisePlotDraw(QVector<double> data);
+	void acfPlotDraw(QVector<double> data);
 };
 
 #endif // MAINWINDOW_H

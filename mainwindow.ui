@@ -43,7 +43,7 @@
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QComboBox" name="comboBox">
+           <widget class="QComboBox" name="signalForm">
             <item>
              <property name="text">
               <string>Sine</string>
@@ -74,7 +74,7 @@
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QDoubleSpinBox" name="doubleSpinBox">
+           <widget class="QDoubleSpinBox" name="signalAmplitude">
             <property name="value">
              <double>1.000000000000000</double>
             </property>
@@ -110,7 +110,7 @@
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QDoubleSpinBox" name="doubleSpinBox_2"/>
+           <widget class="QDoubleSpinBox" name="noiseAmplitude"/>
           </item>
          </layout>
         </widget>
@@ -120,7 +120,7 @@
        <widget class="QCustomPlot" name="noisePlot" native="true"/>
       </item>
       <item row="2" column="1">
-       <widget class="QCustomPlot" name="noisePlot_2" native="true"/>
+       <widget class="QCustomPlot" name="acfPlot" native="true"/>
       </item>
       <item row="2" column="0">
        <widget class="QGroupBox" name="groupBox_3">
@@ -167,23 +167,6 @@
             </property>
             <property name="value">
              <number>1024</number>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_5">
-            <property name="text">
-             <string>Correlation lag</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QSpinBox" name="spinBox">
-            <property name="maximum">
-             <number>1024</number>
-            </property>
-            <property name="value">
-             <number>1</number>
             </property>
            </widget>
           </item>

@@ -12,7 +12,7 @@ class Autocorrelation
 public:
 	Autocorrelation(QVector<double> signal);
 
-	QVector<double> getAutocorrelation(int frame);
+	QVector<double> getAutocorrelation();
 private:
 	QVector<double> signal;
 };
